@@ -1,1 +1,2 @@
-# CalculationSystemExams
+# ระบบคำนวณ 20 ตัวอย่าง เอาไปดัดใช้งานครูอาร์มได้
+# Inspired By OpenAI;
