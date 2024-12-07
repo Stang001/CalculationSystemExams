@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>อายุและ BMI</title>
+</head>
+<body>
+  <h2>คำนวณอายุและ BMI</h2>
+
+  <input type="number" id="birthYear" placeholder="ปีเกิด">
+  <input type="number" id="height" placeholder="ส่วนสูง (เมตร)">
+  <input type="number" id="weight" placeholder="น้ำหนัก (กิโลกรัม)">
+  
+  <button onclick="calculate('age')">คำนวณอายุ</button>
+  <button onclick="calculate('bmi')">คำนวณ BMI</button>
+
+  <p id="result"></p>
+
+  <script>
+    function calculate(operation) {
+      var result;
+      if (operation === 'age') {
+        var birthYear = parseInt(document.getElementById('birthYear').value);
+        var currentYear = new Date().getFullYear();
+        result = currentYear - birthYear;
+        document.getElementById('result').innerText = 'อายุของคุณ: ' + result + ' ปี';
+      } else if (operation === 'bmi') {
+        var height = parseFloat(document.getElementById('height').value);
+        var weight = parseFloat(document.getElementById('weight').value);
+        result = weight / Math.pow(height, 2);
+        document.getElementById('result').innerText = 'BMI ของคุณ: ' + result.toFixed(2);
+      }
+    }
+  </script>
+</body>
+</html>

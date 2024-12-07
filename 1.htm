@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>คำนวณบวกและลบ</title>
+</head>
+<body>
+  <h2>คำนวณบวกและลบ</h2>
+
+  <input type="number" id="num1" placeholder="ตัวเลขที่ 1">
+  <input type="number" id="num2" placeholder="ตัวเลขที่ 2">
+  
+  <button onclick="calculate('add')">บวก</button>
+  <button onclick="calculate('subtract')">ลบ</button>
+
+  <p id="result"></p>
+
+  <script>
+    function calculate(operation) {
+      var num1 = parseFloat(document.getElementById('num1').value);
+      var num2 = parseFloat(document.getElementById('num2').value);
+      var result;
+
+      if (operation === 'add') {
+        result = num1 + num2;
+        document.getElementById('result').innerText = 'ผลลัพธ์การบวก: ' + result;
+      } else if (operation === 'subtract') {
+        result = num1 - num2;
+        document.getElementById('result').innerText = 'ผลลัพธ์การลบ: ' + result;
+      }
+    }
+  </script>
+</body>
+</html>

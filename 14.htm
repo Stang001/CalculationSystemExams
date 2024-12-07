@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>แปลงหน่วยพื้นที่</title>
+</head>
+<body>
+  <h2>แปลงหน่วยพื้นที่</h2>
+
+  <input type="number" id="area" placeholder="พื้นที่ (ตารางเมตร)">
+  
+  <button onclick="convertArea('squareKilometers')">ตารางเมตรเป็นตารางกิโลเมตร</button>
+  <button onclick="convertArea('squareMeters')">ตารางกิโลเมตรเป็นตารางเมตร</button>
+
+  <p id="result"></p>
+
+  <script>
+    function convertArea(operation) {
+      var area = parseFloat(document.getElementById('area').value);
+      var result;
+
+      if (operation === 'squareKilometers') {
+        result = area / 1000000;
+        document.getElementById('result').innerText = area + ' ตารางเมตร = ' + result + ' ตารางกิโลเมตร';
+      } else if (operation === 'squareMeters') {
+        result = area * 1000000;
+        document.getElementById('result').innerText = area + ' ตารางกิโลเมตร = ' + result + ' ตารางเมตร';
+      }
+    }
+  </script>
+</body>
+</html>

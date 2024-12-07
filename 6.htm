@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>แปลงหน่วยอุณหภูมิ</title>
+</head>
+<body>
+  <h2>แปลงหน่วยอุณหภูมิ</h2>
+
+  <input type="number" id="temp" placeholder="อุณหภูมิ">
+  
+  <button onclick="convert('celsiusToFahrenheit')">เซลเซียสเป็นฟาเรนไฮต์</button>
+  <button onclick="convert('fahrenheitToCelsius')">ฟาเรนไฮต์เป็นเซลเซียส</button>
+
+  <p id="result"></p>
+
+  <script>
+    function convert(operation) {
+      var temp = parseFloat(document.getElementById('temp').value);
+      var result;
+
+      if (operation === 'celsiusToFahrenheit') {
+        result = (temp * 9/5) + 32;
+        document.getElementById('result').innerText = temp + '°C = ' + result + '°F';
+      } else if (operation === 'fahrenheitToCelsius') {
+        result = (temp - 32) * 5/9;
+        document.getElementById('result').innerText = temp + '°F = ' + result + '°C';
+      }
+    }
+  </script>
+</body>
+</html>

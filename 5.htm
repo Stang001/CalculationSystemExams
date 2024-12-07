@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>พื้นที่วงกลมและเส้นรอบวง</title>
+</head>
+<body>
+  <h2>คำนวณพื้นที่วงกลมและเส้นรอบวง</h2>
+
+  <input type="number" id="radius" placeholder="รัศมี">
+  
+  <button onclick="calculate('area')">พื้นที่วงกลม</button>
+  <button onclick="calculate('circumference')">เส้นรอบวง</button>
+
+  <p id="result"></p>
+
+  <script>
+    function calculate(operation) {
+      var radius = parseFloat(document.getElementById('radius').value);
+      var result;
+
+      if (operation === 'area') {
+        result = Math.PI * Math.pow(radius, 2);
+        document.getElementById('result').innerText = 'พื้นที่วงกลม: ' + result;
+      } else if (operation === 'circumference') {
+        result = 2 * Math.PI * radius;
+        document.getElementById('result').innerText = 'เส้นรอบวง: ' + result;
+      }
+    }
+  </script>
+</body>
+</html>

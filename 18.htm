@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>คำนวณค่า BMI</title>
+</head>
+<body>
+  <h2>คำนวณค่า BMI</h2>
+
+  <input type="number" id="height" placeholder="ส่วนสูง (เมตร)">
+  <input type="number" id="weight" placeholder="น้ำหนัก (กิโลกรัม)">
+  
+  <button onclick="calculateBMI()">คำนวณ BMI</button>
+
+  <p id="result"></p>
+
+  <script>
+    function calculateBMI() {
+      var height = parseFloat(document.getElementById('height').value);
+      var weight = parseFloat(document.getElementById('weight').value);
+      var bmi = weight / Math.pow(height, 2);
+      var result;
+
+      if (bmi < 18.5) {
+        result = 'BMI: ' + bmi.toFixed(2) + ' (ผอม)';
+      } else if (bmi >= 18.5 && bmi < 24.9) {
+        result = 'BMI: ' + bmi.toFixed(2) + ' (ปกติ)';
+      } else if (bmi >= 25 && bmi < 29.9) {
+        result = 'BMI: ' + bmi.toFixed(2) + ' (อ้วน)';
+      } else {
+        result = 'BMI: ' + bmi.toFixed(2) + ' (อ้วนมาก)';
+      }
+
+      document.getElementById('result').innerText = result;
+    }
+  </script>
+</body>
+</html>

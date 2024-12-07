@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>แปลงหน่วยความยาว</title>
+</head>
+<body>
+  <h2>แปลงหน่วยความยาว</h2>
+
+  <input type="number" id="length" placeholder="ความยาว">
+  
+  <button onclick="convertLength('metersToKilometers')">เมตรเป็นกิโลเมตร</button>
+  <button onclick="convertLength('kilometersToMeters')">กิโลเมตรเป็นเมตร</button>
+
+  <p id="result"></p>
+
+  <script>
+    function convertLength(operation) {
+      var length = parseFloat(document.getElementById('length').value);
+      var result;
+
+      if (operation === 'metersToKilometers') {
+        result = length / 1000;
+        document.getElementById('result').innerText = length + ' เมตร = ' + result + ' กิโลเมตร';
+      } else if (operation === 'kilometersToMeters') {
+        result = length * 1000;
+        document.getElementById('result').innerText = length + ' กิโลเมตร = ' + result + ' เมตร';
+      }
+    }
+  </script>
+</body>
+</html>

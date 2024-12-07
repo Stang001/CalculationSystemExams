@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ปริมาตรทรงกระบอกและลูกบาศก์</title>
+</head>
+<body>
+  <h2>คำนวณปริมาตร</h2>
+
+  <input type="number" id="radius" placeholder="รัศมี">
+  <input type="number" id="height" placeholder="ความสูง">
+
+  <button onclick="calculateVolume('cylinder')">ปริมาตรทรงกระบอก</button>
+  <button onclick="calculateVolume('cube')">ปริมาตรลูกบาศก์</button>
+
+  <p id="result"></p>
+
+  <script>
+    function calculateVolume(shape) {
+      var radius = parseFloat(document.getElementById('radius').value);
+      var height = parseFloat(document.getElementById('height').value);
+      var result;
+
+      if (shape === 'cylinder') {
+        result = Math.PI * Math.pow(radius, 2) * height;
+        document.getElementById('result').innerText = 'ปริมาตรทรงกระบอก: ' + result;
+      } else if (shape === 'cube') {
+        result = Math.pow(radius, 3); // ใช้รัศมีเป็นขนาดด้านของลูกบาศก์
+        document.getElementById('result').innerText = 'ปริมาตรลูกบาศก์: ' + result;
+      }
+    }
+  </script>
+</body>
+</html>

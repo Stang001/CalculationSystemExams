@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ปริมาตรของลูกบาศก์และทรงกลม</title>
+</head>
+<body>
+  <h2>คำนวณปริมาตร</h2>
+
+  <input type="number" id="side" placeholder="ขนาดของลูกบาศก์">
+  <input type="number" id="radius" placeholder="รัศมีของทรงกลม">
+  
+  <button onclick="calculateVolume('cube')">ปริมาตรของลูกบาศก์</button>
+  <button onclick="calculateVolume('sphere')">ปริมาตรของทรงกลม</button>
+
+  <p id="result"></p>
+
+  <script>
+    function calculateVolume(shape) {
+      var result;
+      if (shape === 'cube') {
+        var side = parseFloat(document.getElementById('side').value);
+        result = Math.pow(side, 3);
+        document.getElementById('result').innerText = 'ปริมาตรของลูกบาศก์: ' + result;
+      } else if (shape === 'sphere') {
+        var radius = parseFloat(document.getElementById('radius').value);
+        result = (4 / 3) * Math.PI * Math.pow(radius, 3);
+        document.getElementById('result').innerText = 'ปริมาตรของทรงกลม: ' + result;
+      }
+    }
+  </script>
+</body>
+</html>

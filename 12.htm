@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>คำนวณความเร็วและระยะทาง</title>
+</head>
+<body>
+  <h2>คำนวณความเร็วและระยะทาง</h2>
+
+  <input type="number" id="distance" placeholder="ระยะทาง (กิโลเมตร)">
+  <input type="number" id="time" placeholder="เวลา (ชั่วโมง)">
+  
+  <button onclick="calculate('speed')">คำนวณความเร็ว</button>
+  <button onclick="calculate('distance')">คำนวณระยะทาง</button>
+
+  <p id="result"></p>
+
+  <script>
+    function calculate(operation) {
+      var distance = parseFloat(document.getElementById('distance').value);
+      var time = parseFloat(document.getElementById('time').value);
+      var result;
+
+      if (operation === 'speed') {
+        result = distance / time;
+        document.getElementById('result').innerText = 'ความเร็ว: ' + result + ' km/h';
+      } else if (operation === 'distance') {
+        result = distance * time;
+        document.getElementById('result').innerText = 'ระยะทาง: ' + result + ' กิโลเมตร';
+      }
+    }
+  </script>
+</body>
+</html>

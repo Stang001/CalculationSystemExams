@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>แปลงหน่วยน้ำหนัก</title>
+</head>
+<body>
+  <h2>แปลงหน่วยน้ำหนัก</h2>
+
+  <input type="number" id="weight" placeholder="น้ำหนัก">
+  
+  <button onclick="convertWeight('gramsToKilograms')">กรัมเป็นกิโลกรัม</button>
+  <button onclick="convertWeight('kilogramsToGrams')">กิโลกรัมเป็นกรัม</button>
+
+  <p id="result"></p>
+
+  <script>
+    function convertWeight(operation) {
+      var weight = parseFloat(document.getElementById('weight').value);
+      var result;
+
+      if (operation === 'gramsToKilograms') {
+        result = weight / 1000;
+        document.getElementById('result').innerText = weight + ' กรัม = ' + result + ' กิโลกรัม';
+      } else if (operation === 'kilogramsToGrams') {
+        result = weight * 1000;
+        document.getElementById('result').innerText = weight + ' กิโลกรัม = ' + result + ' กรัม';
+      }
+    }
+  </script>
+</body>
+</html>

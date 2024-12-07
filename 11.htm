@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>คำนวณพื้นที่</title>
+</head>
+<body>
+  <h2>คำนวณพื้นที่สี่เหลี่ยมผืนผ้าและสามเหลี่ยม</h2>
+
+  <input type="number" id="length" placeholder="ความยาว">
+  <input type="number" id="width" placeholder="ความกว้าง">
+  <input type="number" id="height" placeholder="ความสูง">
+
+  <button onclick="calculate('rectangle')">พื้นที่สี่เหลี่ยมผืนผ้า</button>
+  <button onclick="calculate('triangle')">พื้นที่สามเหลี่ยม</button>
+
+  <p id="result"></p>
+
+  <script>
+    function calculate(shape) {
+      var length = parseFloat(document.getElementById('length').value);
+      var width = parseFloat(document.getElementById('width').value);
+      var height = parseFloat(document.getElementById('height').value);
+      var result;
+
+      if (shape === 'rectangle') {
+        result = length * width;
+        document.getElementById('result').innerText = 'พื้นที่สี่เหลี่ยมผืนผ้า: ' + result;
+      } else if (shape === 'triangle') {
+        result = 0.5 * length * height;
+        document.getElementById('result').innerText = 'พื้นที่สามเหลี่ยม: ' + result;
+      }
+    }
+  </script>
+</body>
+</html>

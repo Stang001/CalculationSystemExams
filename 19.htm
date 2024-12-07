@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>คำนวณดอกเบี้ย</title>
+</head>
+<body>
+  <h2>คำนวณดอกเบี้ยเงินฝาก</h2>
+
+  <input type="number" id="principal" placeholder="เงินฝากเริ่มต้น">
+  <input type="number" id="rate" placeholder="อัตราดอกเบี้ย (%)">
+  <input type="number" id="time" placeholder="ระยะเวลา (ปี)">
+  
+  <button onclick="calculateInterest()">คำนวณดอกเบี้ย</button>
+
+  <p id="result"></p>
+
+  <script>
+    function calculateInterest() {
+      var principal = parseFloat(document.getElementById('principal').value);
+      var rate = parseFloat(document.getElementById('rate').value);
+      var time = parseFloat(document.getElementById('time').value);
+      var interest = (principal * rate * time) / 100;
+      var totalAmount = principal + interest;
+
+      document.getElementById('result').innerText = 'ดอกเบี้ย: ' + interest + ' บาท, ยอดรวม: ' + totalAmount + ' บาท';
+    }
+  </script>
+</body>
+</html>

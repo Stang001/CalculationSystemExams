@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>คำนวณจำนวนเงินผ่อน</title>
+</head>
+<body>
+  <h2>คำนวณจำนวนเงินผ่อนชำระรายเดือน</h2>
+
+  <input type="number" id="loanAmount" placeholder="จำนวนเงินกู้">
+  <input type="number" id="interestRate" placeholder="อัตราดอกเบี้ย (%)">
+  <input type="number" id="months" placeholder="จำนวนเดือน">
+  
+  <button onclick="calculateInstallment()">คำนวณเงินผ่อน</button>
+
+  <p id="result"></p>
+
+  <script>
+    function calculateInstallment() {
+      var loanAmount = parseFloat(document.getElementById('loanAmount').value);
+      var interestRate = parseFloat(document.getElementById('interestRate').value) / 100;
+      var months = parseFloat(document.getElementById('months').value);
+      
+      var monthlyInterestRate = interestRate / 12;
+      var monthlyPayment = (loanAmount * monthlyInterestRate) / (1 - Math.pow(1 + monthlyInterestRate, -months));
+      
+      document.getElementById('result').innerText = 'จำนวนเงินผ่อนต่อเดือน: ' + monthlyPayment.toFixed(2) + ' บาท';
+    }
+  </script>
+</body>
+</html>
